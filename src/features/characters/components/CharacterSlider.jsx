@@ -24,9 +24,11 @@ export function CharacterSlider({
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentSlideRef = useRef(null);
+  const viewportRef = useRef(null);
   const directionRef = useRef(1);
   const clickSoundRef = useRef(null);
   const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
   const SWIPE_THRESHOLD = 50;
 
   useEffect(() => {
@@ -75,6 +77,20 @@ export function CharacterSlider({
 
   const handleTouchStart = useCallback((e) => {
     touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  }, []);
+
+  useEffect(() => {
+    const el = viewportRef.current;
+    if (!el) return;
+    const onTouchMove = (e) => {
+      if (e.touches.length !== 1) return;
+      const dx = Math.abs(e.touches[0].clientX - touchStartX.current);
+      const dy = Math.abs(e.touches[0].clientY - touchStartY.current);
+      if (dx > dy && dx > 8) e.preventDefault();
+    };
+    el.addEventListener('touchmove', onTouchMove, { passive: false, capture: true });
+    return () => el.removeEventListener('touchmove', onTouchMove, { capture: true });
   }, []);
 
   const handleTouchEnd = useCallback(
@@ -106,6 +122,7 @@ export function CharacterSlider({
       tabIndex={0}
     >
       <div
+        ref={viewportRef}
         className="character-slider__viewport w-full"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
