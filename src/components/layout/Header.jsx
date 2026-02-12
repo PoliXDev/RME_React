@@ -76,7 +76,6 @@ export function Header() {
     >
       <div className="container mx-auto px-3 sm:px-4">
         <div className="relative flex items-center justify-between gap-2 sm:gap-4 min-h-16 py-2 sm:py-3">
-          {/* Espaciador móvil (mismo ancho que el botón menú) para centrar el logo; desktop: nav */}
           <nav
             aria-label="Navegación principal"
             className="hidden sm:flex items-center gap-1 flex-1 justify-start min-w-0"
@@ -94,7 +93,6 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Logo: mismo tamaño y centrado; z-10 para que no reciba toques del área del menú en móvil */}
           <Link
             to="/characters"
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex items-center justify-center pointer-events-auto"
@@ -109,7 +107,6 @@ export function Header() {
             />
           </Link>
 
-          {/* Desktop: Favoritos a la derecha */}
           <nav className="hidden sm:flex items-center gap-1 flex-1 justify-end min-w-0">
             {navLinks.slice(2).map(({ path, label, icon: Icon }) => (
               <Link
@@ -124,7 +121,6 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Móvil: espaciador izquierdo + botón menú (solo el botón abre/cierra, área táctil definida) */}
           <div className="flex sm:hidden shrink-0 w-11" aria-hidden="true" />
           <div className="relative flex sm:hidden shrink-0 z-20 w-11 h-11 items-center justify-end pointer-events-none" ref={menuRef}>
             <button
@@ -146,7 +142,6 @@ export function Header() {
               )}
             </button>
 
-            {/* Panel desplegable móvil: debajo del navbar, ancho completo */}
             <div
               id="mobile-nav-menu"
               className={cn(

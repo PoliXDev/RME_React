@@ -38,7 +38,6 @@ export function useCharacters() {
       setInfo(data.info);
     } catch (err) {
       setError('Error al cargar los personajes. Por favor, intenta de nuevo.');
-      console.error('Error loading characters:', err);
     } finally {
       setLoading(false);
     }
@@ -72,11 +71,9 @@ export function useCharacters() {
     characters,
     loading,
     error,
-    info,
     filters,
     hasMore,
     loadMore,
     updateFilters,
-    refetch: () => loadCharacters(false),
   };
 }

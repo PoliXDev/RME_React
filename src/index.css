@@ -40,7 +40,6 @@
   }
 }
 
-/* Fondo de estrellas fijo en móvil (portal en body + capa GPU) */
 .night-sky-backdrop {
   position: fixed !important;
   top: 0 !important;

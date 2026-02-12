@@ -41,7 +41,6 @@ export function FavoritesPage() {
         setCharacters(data);
       } catch (err) {
         setError('Error al cargar personajes favoritos');
-        console.error('Error loading favorite characters:', err);
       } finally {
         setLoading(false);
       }
@@ -67,7 +66,6 @@ export function FavoritesPage() {
         setEpisodes(episodesData);
       } catch (err) {
         setError('Error al cargar episodios favoritos');
-        console.error('Error loading favorite episodes:', err);
       } finally {
         setLoading(false);
       }

@@ -24,7 +24,6 @@ export function CharacterDetailPage() {
         setCharacter(data);
       } catch (err) {
         setError('Error al cargar el personaje. Por favor, intenta de nuevo.');
-        console.error('Error loading character:', err);
       } finally {
         setLoading(false);
       }

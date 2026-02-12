@@ -39,7 +39,6 @@ export function useEpisodes() {
       setInfo(data.info);
     } catch (err) {
       setError('Error al cargar los episodios. Por favor, intenta de nuevo.');
-      console.error('Error loading episodes:', err);
     } finally {
       setLoading(false);
     }
@@ -73,11 +72,9 @@ export function useEpisodes() {
     episodes,
     loading,
     error,
-    info,
     filters,
     hasMore,
     loadMore,
     updateFilters,
-    refetch: () => loadEpisodes(false),
   };
 }

@@ -29,4 +29,4 @@ async function fetchApi(url) {
   }
 }
 
-export { BASE_URL, buildUrl, fetchApi };
+export { buildUrl, fetchApi };

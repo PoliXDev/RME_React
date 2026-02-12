@@ -37,7 +37,6 @@ export function EpisodeDetailPage() {
         }
       } catch (err) {
         setError('Error al cargar el episodio. Por favor, intenta de nuevo.');
-        console.error('Error loading episode:', err);
       } finally {
         setLoading(false);
       }
