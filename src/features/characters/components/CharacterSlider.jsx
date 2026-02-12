@@ -115,7 +115,7 @@ export function CharacterSlider({
 
   return (
     <div
-      className="character-slider flex flex-col items-center gap-6 pt-1 pb-8"
+      className="character-slider flex flex-col items-center gap-6 pt-1 pb-4 sm:pb-8"
       role="region"
       aria-label="Carrusel de personajes"
       onKeyDown={handleKeyDown}

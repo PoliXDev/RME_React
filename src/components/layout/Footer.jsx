@@ -3,8 +3,8 @@ export function Footer() {
     'font-mono text-sm uppercase tracking-wider text-gray-400 hover:text-portal-green transition-all duration-300 underline underline-offset-2';
 
   return (
-    <footer className="bg-transparent mt-12 py-8 text-center">
-      <div className="container mx-auto px-4 font-mono text-sm uppercase tracking-wider text-gray-400">
+    <footer className="bg-transparent mt-4 sm:mt-12 py-6 sm:py-8 text-center" style={{ backgroundColor: 'transparent' }}>
+      <div className="container mx-auto px-4 font-mono text-sm uppercase tracking-wider text-gray-400 bg-transparent" style={{ backgroundColor: 'transparent' }}>
         <p className="mb-2">
           Impulsado por{' '}
           <a

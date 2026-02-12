@@ -94,10 +94,10 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Logo: mismo tamaño y centrado en móvil y desktop */}
+          {/* Logo: mismo tamaño y centrado; z-10 para que no reciba toques del área del menú en móvil */}
           <Link
             to="/characters"
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-auto"
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex items-center justify-center pointer-events-auto"
             aria-label="Rick and Morty Explorer - Inicio"
           >
             <img
@@ -124,16 +124,20 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Móvil: espaciador izquierdo + botón menú para que el logo quede centrado */}
+          {/* Móvil: espaciador izquierdo + botón menú (solo el botón abre/cierra, área táctil definida) */}
           <div className="flex sm:hidden shrink-0 w-11" aria-hidden="true" />
-          <div className="relative flex sm:hidden shrink-0" ref={menuRef}>
+          <div className="relative flex sm:hidden shrink-0 z-20 w-11 h-11 items-center justify-end pointer-events-none" ref={menuRef}>
             <button
               type="button"
-              onClick={() => setMenuOpen((o) => !o)}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setMenuOpen((o) => !o);
+              }}
+              className="pointer-events-auto shrink-0 min-w-[44px] min-h-[44px] flex items-center justify-center p-2.5 rounded-lg text-gray-400 hover:text-portal-green hover:bg-portal-green/10 border border-transparent hover:border-portal-green/30 transition-all touch-manipulation"
               aria-expanded={menuOpen}
               aria-controls="mobile-nav-menu"
               aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
-              className="p-2.5 rounded-lg text-gray-400 hover:text-portal-green hover:bg-portal-green/10 border border-transparent hover:border-portal-green/30 transition-all"
             >
               {menuOpen ? (
                 <X className="w-6 h-6" aria-hidden="true" />
@@ -149,7 +153,7 @@ export function Header() {
                 'absolute top-full right-0 mt-1 w-[min(280px,85vw)] rounded-xl border border-portal-green/30 bg-space-black/95 backdrop-blur-md shadow-neon overflow-hidden',
                 'transition-all duration-200 ease-out',
                 menuOpen
-                  ? 'opacity-100 visible translate-y-0'
+                  ? 'opacity-100 visible translate-y-0 pointer-events-auto'
                   : 'opacity-0 invisible -translate-y-2 pointer-events-none'
               )}
             >
