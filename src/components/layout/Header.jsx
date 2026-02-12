@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Users, Tv, Star } from 'lucide-react';
 import { cn } from '../../utils/cn.js';
+import { assetUrl } from '../../utils/assets.js';
 
 const SCROLL_THRESHOLD = 80;
 
@@ -78,7 +79,7 @@ export function Header() {
             aria-label="Rick and Morty Explorer - Inicio"
           >
             <img
-              src="/assets/text2.png"
+              src={assetUrl('assets/text2.png')}
               alt=""
               className="w-[min(85vw,320px)] sm:w-auto h-auto max-h-24 sm:max-h-28 object-contain object-center filter drop-shadow-[0_0_12px_rgba(151,206,76,0.35)] hover:drop-shadow-[0_0_20px_rgba(151,206,76,0.5)] transition-all duration-300"
               width={420}

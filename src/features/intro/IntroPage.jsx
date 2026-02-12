@@ -1,9 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { assetUrl } from '../../utils/assets.js';
 import './IntroPage.css';
 
-const BACKGROUND_SOUND_SRC = '/assets/background_sound.mp3';
+const BACKGROUND_SOUND_SRC = assetUrl('assets/background_sound.mp3');
 
 const MIN_INTRO_DURATION = 6000;
 
@@ -49,8 +50,8 @@ export function IntroPage() {
 
   const isMobile = window.innerWidth <= 768;
   const videoSource = isMobile
-    ? '/assets/rme_mobile.mp4'
-    : '/assets/rme_intro_video.mp4';
+    ? assetUrl('assets/rme_mobile.mp4')
+    : assetUrl('assets/rme_intro_video.mp4');
 
   useEffect(() => {
     const elapsed = Date.now() - startTime;
@@ -131,7 +132,7 @@ export function IntroPage() {
         className="fixed inset-0 bg-cover bg-center flex flex-col z-9999 overflow-hidden"
         style={{
           backgroundImage: `url(${
-            isMobile ? '/assets/intro_background_mobile.jpg' : '/assets/1.jpg'
+            isMobile ? assetUrl('assets/intro_background_mobile.jpg') : assetUrl('assets/1.jpg')
           })`,
         }}
       >
@@ -151,7 +152,7 @@ export function IntroPage() {
         <div className="relative z-10 flex justify-center pt-26 md:pt-39 shrink-0">
           <div className="relative flex items-center justify-center">
             <img
-              src="/assets/text2.png"
+              src={assetUrl('assets/text2.png')}
               alt="Rick and Morty"
               className="intro-logo max-w-[500px] w-[85vw] h-auto relative z-10 md:max-w-[600px]"
             />

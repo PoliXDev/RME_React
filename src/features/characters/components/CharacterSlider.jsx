@@ -2,6 +2,7 @@ import { useState, useRef, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FavoriteButton } from '../../../components/shared/FavoriteButton.jsx';
 import { translateStatus } from '../../../utils/translations.js';
+import { assetUrl } from '../../../utils/assets.js';
 import { useTilt } from '../hooks/useTilt.js';
 import './CharacterSlider.css';
 
@@ -29,7 +30,7 @@ export function CharacterSlider({
   const SWIPE_THRESHOLD = 50;
 
   useEffect(() => {
-    clickSoundRef.current = new Audio('/assets/clic.mp3');
+    clickSoundRef.current = new Audio(assetUrl('assets/clic.mp3'));
     return () => { clickSoundRef.current = null; };
   }, []);
 
@@ -114,7 +115,7 @@ export function CharacterSlider({
         <div className="character-slider__center-area">
           <div className="character-slider__portal-wrap">
             <img
-              src="/assets/rick_and_morty.svg"
+              src={assetUrl('assets/rick_and_morty.svg')}
               alt=""
               className="character-slider__back-image"
               aria-hidden="true"

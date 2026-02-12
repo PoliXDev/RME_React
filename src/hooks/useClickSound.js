@@ -1,12 +1,11 @@
 import { useRef, useEffect, useCallback } from 'react';
-
-const CLICK_SOUND_SRC = '/assets/clic.mp3';
+import { assetUrl } from '../utils/assets.js';
 
 export function useClickSound() {
   const audioRef = useRef(null);
 
   useEffect(() => {
-    audioRef.current = new Audio(CLICK_SOUND_SRC);
+    audioRef.current = new Audio(assetUrl('assets/clic.mp3'));
     return () => {
       audioRef.current = null;
     };
