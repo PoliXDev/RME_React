@@ -1,25 +1,18 @@
 import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: './',
+  plugins: [react(), tailwindcss()],
+  base: '/RME_React/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    rollupOptions: {
-      input: {
-        main: './index.html',
-        characters: './characters.html',
-        character: './character-detail.html',
-        episodes: './episodes.html',
-        episode: './episode.html',
-        favorites: './favorites.html'
-      }
-    }
   },
   server: {
     port: 5173,
-    open: './index.html'
+    open: '/'
   }
 })
 

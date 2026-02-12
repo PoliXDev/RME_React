@@ -1,41 +1,41 @@
 # Rick & Morty Explorer
 
-Web application built with Vanilla JavaScript and Vite that consumes the [Rick and Morty API](https://rickandmortyapi.com) to explore characters and episodes from the multiverse.
+Web application built with **React**, **Tailwind CSS**, and **Vite** that consumes the [Rick and Morty API](https://rickandmortyapi.com) to explore characters and episodes from the multiverso.
 
-page : https://polixdev.github.io/Rick_Morty_Explorer/
-
-## Features
-
-### Characters
-- Real-time search by name
-- Filters by status, species, and gender
-- Pagination with "Load more" button
-- Individual detail view
-- Favorites system with localStorage
-
-### Episodes
-- Complete episode list
-- Search by name
-- Filter by season (S01 to S05)
-- Detail view with character list
-- Links to characters from episode
-
-### Favorites
-- Mark characters and episodes as favorites
-- Independent page with statistics
-- Tabs to separate characters and episodes
-- Automatic persistence in localStorage
+🌐 **Live Demo:** https://polixdev.github.io/RME_React
 
 
-## Technologies
 
-- Vite - Build tool and dev server
-- Vanilla JavaScript (ES6+) - No frameworks
-- CSS3 - CSS variables and Grid/Flexbox
-- Rick and Morty API - Data source
+##  Technologies
 
-## Credits
+- **React 18** - UI library
+- **React Router DOM** - Client-side routing
+- **Tailwind CSS** - Utility-first CSS framework
+- **Vite** - Build tool and dev server
+- **React Helmet Async** - SEO and meta tags management
+- **Lucide React** - Icon library
+- **Rick and Morty API** - Data source
 
-- API: [Rick and Morty API](https://rickandmortyapi.com)
+```
 
-- Developer: Daniel Ruiz Poli
+##  Design Principles
+
+- **SEO Optimized**: Meta tags, semantic HTML, proper heading hierarchy
+- **Accessible**: ARIA labels, keyboard navigation, screen reader support
+- **Responsive**: Mobile-first design approach
+- **Performance**: Code splitting, lazy loading, optimized images
+- **Type Safety**: PropTypes and proper error handling
+
+##  Code Quality
+
+- **Feature-based architecture**: Organized by domain/feature
+- **Component composition**: Reusable, composable components
+- **Custom hooks**: Business logic separated from UI
+- **Context API**: Global state management for favorites
+- **Error boundaries**: Graceful error handling
+- **Loading states**: User feedback during async operations
+
+
+- **API**: [Rick and Morty API](https://rickandmortyapi.com)
+- **Developer**: Daniel Ruiz Poli ([@PoliXDev](https://github.com/PoliXDev))
+

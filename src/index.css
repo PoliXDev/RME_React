@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Winky+Rough:ital,wght@0,300..900;1,300..900&family=Galindo&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@theme {
+  --color-bg: #24282f;
+  --color-bg-secondary: #3c3e44;
+  --color-accent: #97ce4c;
+  --color-accent-hover: #b5e06e;
+  --color-gold: #e4a788;
+  --color-space-black: #24282f;
+  --color-card-gray: #3c3e44;
+  --color-portal-green: #97ce4c;
+  --color-toxic-yellow: #e4a788;
+  --color-status-alive: #44ff44;
+  --color-status-dead: #ff4444;
+  --color-status-unknown: #999999;
+  --font-galindo: "Galindo", cursive;
+  --font-display: "Metal Mania", system-ui;
+  --font-body: "Winky Rough", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    font-size: 112.5%;
+    background-color: var(--color-bg);
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: transparent;
+    color: white;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .metal-mania-regular {
+    font-family: "Metal Mania", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .winky-rough {
+    font-family: "Winky Rough", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+}

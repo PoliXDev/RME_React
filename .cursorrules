@@ -1,0 +1,78 @@
+🚀 Cursor Rules -- Rick & Morty Explorer (React Refactor Edition)
+🎯 Project Goal
+Refactor a Vanilla JS app into a High-Impact React Application. The UI must resemble a "Citadel Database": technical, sci-fi, and data-heavy, avoiding generic "social media" card layouts.
+
+🎨 Visual Identity: "Multiverse Dossier"
+Strict Design Guidelines:
+
+Layout: Horizontal/Rectangular Cards (Dossier style). NO vertical cards.
+
+Aesthetic: Cyber-grunge, dark mode, neon accents, glassmorphism.
+
+Typography:
+
+Headers: Display Font (e.g., Creepster or similar glitchy font).
+
+Data/Specs: Monospace (font-mono) to simulate terminal data.
+
+Color Palette (Tailwind Config):
+
+bg-space-black (#24282f) → Main Background.
+
+text-portal-green (#97ce4c) → Primary Actions, Glows, Active States.
+
+border-toxic-yellow (#e4a788) → Warnings, Highlights.
+
+bg-card-gray (#3c3e44) → Component Backgrounds.
+
+🛠 Tech Stack
+Core: React (Vite) + JavaScript/TypeScript.
+
+Styling: Tailwind CSS + clsx/tailwind-merge.
+
+Motion: Framer Motion (Mandatory for entry animations and hover effects).
+
+Icons: lucide-react (Use thin, technical icons).
+
+📐 UI/UX Requirements (The "Wow" Factor)
+1. The "Citadel File" Card (Character Component)
+Structure: Horizontal layout (flex-row).
+
+Left: Avatar image. Starts Grayscale, becomes Color on hover.
+
+Right: Technical Data (Name, Status, Location, Origin).
+
+Interactions:
+
+Hover triggers a neon glow border (border-portal-green).
+
+Hover reveals a "Access Data" button or extra details.
+
+Status indicator must be a glowing LED dot (Green/Red/Gray).
+
+2. Layout & Navigation
+Grid: Responsive Grid that stacks vertically on mobile but expands to 2 or 3 columns on desktop.
+
+Loader: Custom rotating "Portal" SVG (No standard spinners).
+
+Pagination: "Portal Jump" style controls (e.g., "Jump to Dimension [Page]").
+
+🧠 Coding Standards for Cursor
+React Architecture
+Functional Components: Use const Component = () => {}.
+
+Custom Hooks: Extract logic (e.g., useCharacters, usePagination) separate from UI.
+
+Performance: Use useMemo for filtering lists.
+
+Tailwind Usage
+Utility-First: Avoid custom CSS classes unless for complex animations.
+
+Gradients: Use subtle gradients for image overlays (bg-gradient-to-r).
+
+Glassmorphism: Use backdrop-blur-md and bg-opacity for sticky headers/filters.
+
+Animation Strategy
+Page Load: Staggered fade-in for list items (items don't appear all at once).
+
+Hover: scale-105 or translate-x for subtle feedback.

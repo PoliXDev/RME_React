@@ -1,0 +1,181 @@
+.intro-logo {
+  animation: logoEntrance 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes logoEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-10deg) translateY(-50px);
+  }
+  70% {
+    transform: scale(1.1) rotate(0deg) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg) translateY(0);
+  }
+}
+
+.intro-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(151, 206, 76, 0.9);
+  box-shadow: 0 0 10px rgba(151, 206, 76, 0.6);
+  animation: particleFloat 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes particleFloat {
+  0% {
+    bottom: -10%;
+    opacity: 0;
+    transform: scale(0.5) translateX(0);
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    bottom: 110%;
+    opacity: 0;
+    transform: scale(1) translateX(20px);
+  }
+}
+
+.intro-loader-vial {
+  width: 40px;
+  height: 120px;
+  border: 3px solid rgba(151, 206, 76, 0.8);
+  border-top: none;
+  border-radius: 0 0 16px 16px;
+  position: relative;
+  overflow: visible;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 
+    0 0 10px rgba(151, 206, 76, 0.6),
+    0 0 20px rgba(151, 206, 76, 0.4),
+    inset 0 0 10px rgba(151, 206, 76, 0.2);
+  animation: vialGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes vialGlow {
+  from {
+    box-shadow: 
+      0 0 10px rgba(151, 206, 76, 0.6),
+      0 0 20px rgba(151, 206, 76, 0.4),
+      inset 0 0 10px rgba(151, 206, 76, 0.2);
+  }
+  to {
+    box-shadow: 
+      0 0 15px rgba(151, 206, 76, 0.8),
+      0 0 30px rgba(151, 206, 76, 0.6),
+      inset 0 0 15px rgba(151, 206, 76, 0.3);
+  }
+}
+
+.intro-loader-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(151, 206, 76, 0.95) 0%,
+    rgba(151, 206, 76, 0.6) 100%
+  );
+  background-size: 100% 200%;
+  background-position: 0 100%;
+  animation: animloader 6s linear infinite;
+}
+
+.intro-loader-bubbles {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-image: radial-gradient(
+      circle at 30% 80%,
+      rgba(255, 255, 255, 0.4) 2px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 70% 60%,
+      rgba(255, 255, 255, 0.3) 2px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(255, 255, 255, 0.35) 2px,
+      transparent 2px
+    );
+  background-size: 100% 33%;
+  background-position: 0 100%;
+  animation: animloader1 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes animloader {
+  0% {
+    background-position: 0 100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes animloader1 {
+  0% {
+    background-position: 0 100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.intro-loading-text {
+  animation: textPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes textPulse {
+  0%,
+  100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.intro-loader-exit {
+  animation: introFadeOut 0.5s ease-out forwards;
+  pointer-events: none;
+}
+
+.intro-button-enter {
+  animation: introFadeIn 0.5s ease-out 0.25s forwards;
+  opacity: 0;
+}
+
+@keyframes introFadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes introFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
