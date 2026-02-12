@@ -1,4 +1,5 @@
 import { useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 export function NightSkyCanvas() {
   const milkyWayRef = useRef(null);
@@ -265,20 +266,48 @@ export function NightSkyCanvas() {
     };
   }, []);
 
-  return (
-    <>
+  const content = (
+    <div
+      className="night-sky-backdrop"
+      aria-hidden="true"
+      style={{
+        position: 'fixed',
+        inset: 0,
+        width: '100%',
+        height: '100%',
+        zIndex: -10,
+        pointerEvents: 'none',
+        transform: 'translateZ(0)',
+        WebkitBackfaceVisibility: 'hidden',
+        backfaceVisibility: 'hidden',
+      }}
+    >
       <canvas
         ref={milkyWayRef}
-        className="fixed inset-0 w-full h-full -z-10"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          display: 'block',
+        }}
         aria-hidden="true"
-        style={{ display: 'block' }}
       />
       <canvas
         ref={starsRef}
-        className="fixed inset-0 w-full h-full -z-10"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          display: 'block',
+        }}
         aria-hidden="true"
-        style={{ display: 'block' }}
       />
-    </>
+    </div>
   );
+
+  return createPortal(content, document.body);
 }
