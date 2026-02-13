@@ -35,3 +35,4 @@ Web application built with **React**, **Tailwind CSS**, and **Vite** that consum
 
 - **API**: [Rick and Morty API](https://rickandmortyapi.com)
 - **Developer**: Daniel Ruiz Poli ([@PoliXDev](https://github.com/PoliXDev))
+

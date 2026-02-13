@@ -13,20 +13,12 @@ function buildUrl(endpoint, filters = {}) {
 }
 
 async function fetchApi(url) {
-  try {
-    const response = await fetch(url);
-    
-    if (!response.ok) {
-      if (response.status === 404) {
-        return null;
-      }
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    
-    return await response.json();
-  } catch (error) {
-    throw error;
+  const response = await fetch(url);
+  if (!response.ok) {
+    if (response.status === 404) return null;
+    throw new Error(`HTTP error! status: ${response.status}`);
   }
+  return response.json();
 }
 
 export { buildUrl, fetchApi };

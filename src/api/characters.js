@@ -10,17 +10,11 @@ export async function fetchCharacters(page = 1, filters = {}) {
     gender: filters.gender,
   });
   
-  try {
-    const data = await fetchApi(url);
-
-    if (!data) {
-      return { results: [], info: { count: 0, pages: 0, next: null, prev: null } };
-    }
-    
-    return data;
-  } catch (error) {
-    throw error;
+  const data = await fetchApi(url);
+  if (!data) {
+    return { results: [], info: { count: 0, pages: 0, next: null, prev: null } };
   }
+  return data;
 }
 
 export async function fetchCharacterById(id) {
@@ -36,15 +30,7 @@ export async function fetchCharactersByIds(ids) {
   const idsString = ids.join(",");
   const url = `${buildUrl("/character")}/${idsString}`;
   
-  try {
-    const data = await fetchApi(url);
-    
-    if (!data) {
-      return [];
-    }
-    
-    return Array.isArray(data) ? data : [data];
-  } catch (error) {
-    throw error;
-  }
+  const data = await fetchApi(url);
+  if (!data) return [];
+  return Array.isArray(data) ? data : [data];
 }
