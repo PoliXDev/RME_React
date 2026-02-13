@@ -1,4 +1,4 @@
-# Rick & Morty Explorer
+# Rick & Morty Explorer Refactor
 
 Web application built with **React**, **Tailwind CSS**, and **Vite** that consumes the [Rick and Morty API](https://rickandmortyapi.com) to explore characters and episodes from the multiverso.
 
@@ -6,7 +6,7 @@ Web application built with **React**, **Tailwind CSS**, and **Vite** that consum
 
 
 
-##  Technologies
+## Technologies
 
 - **React 18** - UI library
 - **React Router DOM** - Client-side routing
@@ -16,9 +16,7 @@ Web application built with **React**, **Tailwind CSS**, and **Vite** that consum
 - **Lucide React** - Icon library
 - **Rick and Morty API** - Data source
 
-```
-
-##  Design Principles
+## Design Principles
 
 - **SEO Optimized**: Meta tags, semantic HTML, proper heading hierarchy
 - **Accessible**: ARIA labels, keyboard navigation, screen reader support
@@ -26,7 +24,7 @@ Web application built with **React**, **Tailwind CSS**, and **Vite** that consum
 - **Performance**: Code splitting, lazy loading, optimized images
 - **Type Safety**: PropTypes and proper error handling
 
-##  Code Quality
+## Code Quality
 
 - **Feature-based architecture**: Organized by domain/feature
 - **Component composition**: Reusable, composable components
@@ -34,7 +32,6 @@ Web application built with **React**, **Tailwind CSS**, and **Vite** that consum
 - **Context API**: Global state management for favorites
 - **Error boundaries**: Graceful error handling
 - **Loading states**: User feedback during async operations
-
 
 - **API**: [Rick and Morty API](https://rickandmortyapi.com)
 - **Developer**: Daniel Ruiz Poli ([@PoliXDev](https://github.com/PoliXDev))
