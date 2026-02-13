@@ -36,3 +36,14 @@ Web application built with **React**, **Tailwind CSS**, and **Vite** that consum
 - **API**: [Rick and Morty API](https://rickandmortyapi.com)
 - **Developer**: Daniel Ruiz Poli ([@PoliXDev](https://github.com/PoliXDev))
 
+## Deploy to GitHub Pages
+
+1. Create a new repository on GitHub (e.g. `RME_React`).
+2. Set the remote and push (use your repo URL if different):
+   ```bash
+   git remote set-url origin https://github.com/PoliXDev/RME_React.git
+   git push -u origin main
+   ```
+3. In the repo: **Settings → Pages → Build and deployment**: Source = **GitHub Actions**.
+4. Each push to `main` runs the workflow in `.github/workflows/deploy.yml` and deploys the app to `https://<user>.github.io/RME_React/`.
+
